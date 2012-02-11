@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "CocoaLibSpotify.h"
 
 
 @implementation RootViewController

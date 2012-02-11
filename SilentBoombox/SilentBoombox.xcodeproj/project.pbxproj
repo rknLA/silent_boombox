@@ -15,6 +15,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		BC4D6EF014E72212001504E6 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4D6EEF14E72212001504E6 /* libCocoaLibSpotify.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,30 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SilentBoombox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SilentBoombox-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		BC4D6EEF14E72212001504E6 /* libCocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaLibSpotify.a; sourceTree = "<group>"; };
+		BC4D6EF714E7222F001504E6 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		BC4D6EF814E7222F001504E6 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
+		BC4D6EF914E7222F001504E6 /* CocoaLibSpotifyPlatformImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotifyPlatformImports.h; sourceTree = "<group>"; };
+		BC4D6EFA14E7222F001504E6 /* SPAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlbum.h; sourceTree = "<group>"; };
+		BC4D6EFB14E7222F001504E6 /* SPAlbumBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlbumBrowse.h; sourceTree = "<group>"; };
+		BC4D6EFC14E7222F001504E6 /* SPArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPArtist.h; sourceTree = "<group>"; };
+		BC4D6EFD14E7222F001504E6 /* SPArtistBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPArtistBrowse.h; sourceTree = "<group>"; };
+		BC4D6EFE14E7222F001504E6 /* SPCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCommon.h; sourceTree = "<group>"; };
+		BC4D6EFF14E7222F001504E6 /* SPErrorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPErrorExtensions.h; sourceTree = "<group>"; };
+		BC4D6F0014E7222F001504E6 /* SPImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImage.h; sourceTree = "<group>"; };
+		BC4D6F0114E7222F001504E6 /* SPPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylist.h; sourceTree = "<group>"; };
+		BC4D6F0214E7222F001504E6 /* SPPlaylistContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistContainer.h; sourceTree = "<group>"; };
+		BC4D6F0314E7222F001504E6 /* SPPlaylistFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistFolder.h; sourceTree = "<group>"; };
+		BC4D6F0414E7222F001504E6 /* SPPlaylistFolderInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistFolderInternal.h; sourceTree = "<group>"; };
+		BC4D6F0514E7222F001504E6 /* SPPlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaylistItem.h; sourceTree = "<group>"; };
+		BC4D6F0614E7222F001504E6 /* SPPostTracksToInboxOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPostTracksToInboxOperation.h; sourceTree = "<group>"; };
+		BC4D6F0714E7222F001504E6 /* SPSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearch.h; sourceTree = "<group>"; };
+		BC4D6F0814E7222F001504E6 /* SPSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSession.h; sourceTree = "<group>"; };
+		BC4D6F0914E7222F001504E6 /* SPToplist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPToplist.h; sourceTree = "<group>"; };
+		BC4D6F0A14E7222F001504E6 /* SPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrack.h; sourceTree = "<group>"; };
+		BC4D6F0B14E7222F001504E6 /* SPUnknownPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUnknownPlaylist.h; sourceTree = "<group>"; };
+		BC4D6F0C14E7222F001504E6 /* SPURLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPURLExtensions.h; sourceTree = "<group>"; };
+		BC4D6F0D14E7222F001504E6 /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +66,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				BC4D6EF014E72212001504E6 /* libCocoaLibSpotify.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +107,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BC4D6EF614E7222F001504E6 /* include */,
 				28A0AAE50D9B0CCF005BE974 /* SilentBoombox_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -100,11 +127,42 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC4D6EEF14E72212001504E6 /* libCocoaLibSpotify.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC4D6EF614E7222F001504E6 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BC4D6EF714E7222F001504E6 /* api.h */,
+				BC4D6EF814E7222F001504E6 /* CocoaLibSpotify.h */,
+				BC4D6EF914E7222F001504E6 /* CocoaLibSpotifyPlatformImports.h */,
+				BC4D6EFA14E7222F001504E6 /* SPAlbum.h */,
+				BC4D6EFB14E7222F001504E6 /* SPAlbumBrowse.h */,
+				BC4D6EFC14E7222F001504E6 /* SPArtist.h */,
+				BC4D6EFD14E7222F001504E6 /* SPArtistBrowse.h */,
+				BC4D6EFE14E7222F001504E6 /* SPCommon.h */,
+				BC4D6EFF14E7222F001504E6 /* SPErrorExtensions.h */,
+				BC4D6F0014E7222F001504E6 /* SPImage.h */,
+				BC4D6F0114E7222F001504E6 /* SPPlaylist.h */,
+				BC4D6F0214E7222F001504E6 /* SPPlaylistContainer.h */,
+				BC4D6F0314E7222F001504E6 /* SPPlaylistFolder.h */,
+				BC4D6F0414E7222F001504E6 /* SPPlaylistFolderInternal.h */,
+				BC4D6F0514E7222F001504E6 /* SPPlaylistItem.h */,
+				BC4D6F0614E7222F001504E6 /* SPPostTracksToInboxOperation.h */,
+				BC4D6F0714E7222F001504E6 /* SPSearch.h */,
+				BC4D6F0814E7222F001504E6 /* SPSession.h */,
+				BC4D6F0914E7222F001504E6 /* SPToplist.h */,
+				BC4D6F0A14E7222F001504E6 /* SPTrack.h */,
+				BC4D6F0B14E7222F001504E6 /* SPUnknownPlaylist.h */,
+				BC4D6F0C14E7222F001504E6 /* SPURLExtensions.h */,
+				BC4D6F0D14E7222F001504E6 /* SPUser.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +246,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SilentBoombox_Prefix.pch;
 				INFOPLIST_FILE = "SilentBoombox-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = SilentBoombox;
 			};
 			name = Debug;
@@ -200,6 +262,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SilentBoombox_Prefix.pch;
 				INFOPLIST_FILE = "SilentBoombox-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = SilentBoombox;
 				VALIDATE_PRODUCT = YES;
 			};
