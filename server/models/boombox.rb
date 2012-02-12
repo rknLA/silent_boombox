@@ -6,7 +6,6 @@ class Boombox
   property :dj_listener_id,   Integer
   property :sync_time,        DateTime
 
-  has n, :listeners
 end
 
 class Listener
@@ -17,7 +16,6 @@ class Listener
   property :boombox_id,       Integer
   property :buffered,         Boolean,    :default => false
 
-  belongs_to :boombox
 end
 
 class Song
@@ -28,4 +26,7 @@ class Song
   property :boombox_id,       Integer
 end
 
- 
+DataMapper.setup(:default, 'mysql://rknLA@localhost/silent_boombox')
+DataMapper.finalize
+DataMapper.auto_migrate!
+
