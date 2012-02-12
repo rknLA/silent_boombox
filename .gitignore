@@ -4,3 +4,6 @@ build
 SilentBoombox/SilentBoombox.xcodeproj/xcuserdata/
 SilentBoombox/SilentBoombox.xcodeproj/project.xcworkspace/xcuserdata/danielhd.xcuserdatad/UserInterfaceState.xcuserstate
 SilentBoombox/SilentBoombox.xcodeproj/project.xcworkspace/xcuserdata/
+*.log
+*.swp
+*.tmp
