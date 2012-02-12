@@ -2,11 +2,10 @@ source 'http://rubygems.org/'
 
 gem 'sinatra'
 gem 'unicorn'
-gem 'activerecord'
-gem 'mysql'
+gem 'pg', '0.10.0'
 gem 'json'
 gem 'rspec'
 gem 'rack-test'
 
 gem 'data_mapper'
-gem 'dm-mysql-adapter'
+gem 'dm-postgres-adapter'
