@@ -91,7 +91,7 @@
                 return;
             }
             
-//            [delegate didFindBoombox:[boombox_result objectForKey:@"boombox_id"] withSongId:[boombox_result objectForKey:@"spotify_song_id"]];
+            [delegate didFindBoombox:[boombox_result objectForKey:@"boombox_id"] withSongId:[boombox_result objectForKey:@"spotify_song_id"]];
             
         } else if ([[request resourcePath] isEqualToString:@"/sync"]) {
             if ([[response bodyAsString] isEqualToString:@""]) {
@@ -109,13 +109,13 @@
             //didCreateBoomboxWithID
             NSDictionary* boombox_result = [response parsedBody:nil];
 
-//            [delegate didCreateBoomboxWithId:[boombox_result objectForKey:@"boombox_id"]];
+            [delegate didCreateBoomboxWithId:[boombox_result objectForKey:@"boombox_id"]];
             
         } else if ([[request resourcePath] isEqualToString:@"/listener"]) {
             if ([response isOK]) {
-//                [delegate didAddListener];
+                [delegate didAddListener];
             } else if ([response isClientError]) {
-//                [delegate didFailToAddListener];
+                [delegate didFailToAddListener];
             } else {
                 NSLog(@"A bigger problem has occurred.  Consider checking outside to see if it's the apocalypse.");
             }
@@ -126,7 +126,7 @@
             [delegate didSetSong];
         } else if ([[request resourcePath] isEqualToString:@"/buffered"]) {
             if ([response isOK]) {
-//                [delegate didPostBuffered];
+                [delegate didPostBuffered];
             } else {
                 NSLog(@"I got 99 problems and a /buffered is one.");
             }

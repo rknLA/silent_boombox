@@ -12,6 +12,7 @@
 #import "SilentBoomboxAppDelegate.h"
 #import "WCSyncStartWaitingViewController.h"
 #import "WCUserRestClient.h"
+#import "WCMusicSelectViewController.h"
 
 @implementation WCAddListenersViewController
 @synthesize client;
@@ -163,7 +164,9 @@
 }
 
 - (IBAction)doneTouched:(id)sender {
-    
+    WCMusicSelectViewController *viewController = [[WCMusicSelectViewController alloc] initWithNibName:@"WCMusicSelectViewController" bundle:nil];
+    viewController.boomboxID = self.boomboxID;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)addListener:(id)sender {

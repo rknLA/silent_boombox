@@ -20,4 +20,6 @@
 - (IBAction)addListener:(id)sender;
 @property (nonatomic, strong, readwrite) WCUserRestClient *client;
 @property (nonatomic, strong, readwrite) NSNumber *boomboxID;
+- (void)didAddListener;
+- (void)didFailToAddListener;
 @end

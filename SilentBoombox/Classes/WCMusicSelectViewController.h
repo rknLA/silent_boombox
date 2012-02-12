@@ -19,5 +19,5 @@
 @property (strong, readwrite) NSNumber *boomboxID;
 @property (strong, readwrite) NSString *songID;
 - (IBAction)searchAndPlay:(id)sender;
-
+- (void)didSetSong;
 @end
