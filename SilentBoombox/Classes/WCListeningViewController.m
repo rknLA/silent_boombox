@@ -79,8 +79,9 @@
     NSInvocation *inv = [NSInvocation invocationWithMethodSignature:[session methodSignatureForSelector:@selector(playTrack:error:)]];
     [inv setTarget:session];
     [inv setSelector:@selector(playTrack:error:)];
+    NSError *err = nil;
     [inv setArgument:(__bridge void *)self.track atIndex:2];
-    [inv setArgument:nil atIndex:3];
+    [inv setArgument:&err atIndex:3];
     [inv performSelector:@selector(invoke) withObject:nil afterDelay:[startDate timeIntervalSinceNow]];
 }
 
