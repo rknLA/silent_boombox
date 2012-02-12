@@ -6,6 +6,7 @@ class MHDApp < Sinatra::Application
     DataMapper::Logger.new($stdout, :debug)
     DataMapper.setup(:default, 'mysql://localhost/silent_boombox')
     DataMapper.finalize
+    DataMapper.auto_migrate!
   end
 
   before do
