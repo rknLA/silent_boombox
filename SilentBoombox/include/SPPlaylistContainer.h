@@ -80,7 +80,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readonly) NSMutableArray *playlists;
 
 /** Returns the session the list is loaded in. */
-@property (nonatomic, readonly, assign) __weak SPSession *session;
+@property (nonatomic, readonly, weak) __weak SPSession *session;
 
 ///----------------------------
 /// @name Working with Playlists and Folders

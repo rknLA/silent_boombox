@@ -96,7 +96,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///----------------------------
 
 /** Returns the operation's delegate. */
-@property (nonatomic, readonly, assign) __weak id <SPPostTracksToInboxOperationDelegate> delegate;
+@property (nonatomic, readonly, weak) __weak id <SPPostTracksToInboxOperationDelegate> delegate;
 
 /** Returns the username of the user the tracks the operation is sending tracks to. */
 @property (nonatomic, readonly, copy) NSString *destinationUser;
