@@ -161,7 +161,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, readonly) sp_track_offline_status offlineStatus;
 
 /** Returns the Spotify session the track is associated with. */
-@property (nonatomic, assign, readonly) __weak SPSession *session;
+@property (nonatomic, weak, readonly) __weak SPSession *session;
 
 ///----------------------------
 /// @name Metadata
