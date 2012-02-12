@@ -90,6 +90,7 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-postgres-adapter
+  do_postgres
   json
   pg (= 0.10.0)
   rack-test
