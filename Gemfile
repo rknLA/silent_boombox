@@ -8,4 +8,5 @@ gem 'rspec'
 gem 'rack-test'
 
 gem 'data_mapper'
+gem 'do_postgres'
 gem 'dm-postgres-adapter'
