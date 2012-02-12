@@ -6,10 +6,8 @@ describe "Boombox" do
     post '/boombox'
     last_response.should be_ok
     result = JSON.parse(last_response.body)
-    has_id = result.include? 'id'
-    has_id.should_be true
-    has_listener_id = result.include? 'listener_id'
-    has_listener_id.should_be true
+    result.include?('boombox_id').should be_true
+    result.include?('listener_id').should be_true
   end
 
 end

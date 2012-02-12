@@ -83,15 +83,16 @@ class MHDApp
 
   post '/buffered' do
     listener = Listener.first(
-      :spotify_id => params['spotify_id'],
-      :boombox_id => params['boombox_id']
+      :spotify_id => params[:spotify_id],
+      :boombox_id => params[:boombox_id]
     )
 
     unless listener
       status 400
       result = {
-        'error' => 'Invalid listener parameters provided'
-      }
+        :error => 'Invalid listener parameters provided',
+        :params => params
+      }.to_json
     else
       listener.buffered = true;
       listener.save
@@ -104,7 +105,7 @@ class MHDApp
     end
   end
 
-##############################    POST /sync    ##############################
+##############################    GET /sync    ##############################
 
   get '/sync' do
     all_ready = true

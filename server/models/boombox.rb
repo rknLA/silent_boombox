@@ -25,10 +25,10 @@ class Song
 
   property :id,               Serial
   property :spotify_song_id,  String
-  property :boombox_id,       Integer
+  property :boombox_id,       Integer,    :required => true
 end
 
 DataMapper.setup(:default, 'mysql://rknLA@localhost/silent_boombox')
 DataMapper.finalize
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
 
