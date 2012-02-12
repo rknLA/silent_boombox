@@ -8,7 +8,6 @@
 
 #import "SilentBoomboxAppDelegate.h"
 #import "SPLoginViewController.h"
-#import "SPLoginViewController.h"
 
 #import "include/appkey.c"
 
@@ -17,6 +16,7 @@
 
 @synthesize window;
 @synthesize navigationController;
+@synthesize spotifySession;
 
 
 #pragma mark -

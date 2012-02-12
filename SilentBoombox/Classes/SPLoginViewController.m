@@ -33,6 +33,7 @@
 #import "SPLoginViewController.h"
 #import "CocoaLibSpotify.h"
 #import "WCRoleChooserViewController.h"
+#import "SilentBoomboxAppDelegate.h"
 
 @implementation SPLoginViewController
 @synthesize usernameField;
@@ -82,8 +83,13 @@
 	self.spinner.hidden = NO;
 	
 }
-
--(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error; {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    [self performSelector:@selector(performLogin:) withObject:self afterDelay:0.01f];
+    return NO;
+}
+-(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error {
     
 	// Invoked by SPSession after a failed login.
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
@@ -102,6 +108,7 @@
 -(void)sessionDidLoginSuccessfully:(SPSession *)aSession
 {
     //Push RoleChooserViewController
+    [(SilentBoomboxAppDelegate *)[[UIApplication sharedApplication] delegate] setSpotifySession:aSession];
     WCRoleChooserViewController *roleChooser = [[WCRoleChooserViewController alloc] initWithNibName:@"WCRoleChooserViewController" bundle:nil];
     [self.navigationController pushViewController:roleChooser animated:YES];
 }
@@ -116,11 +123,15 @@
 
 - (void)viewDidLoad
 {
+    NSArray *foo = [@"a b c d e f g h i j k l m n o p q r s t u v w x y z 1 2 3 4 5 6 7 8 9 0" componentsSeparatedByString:@" "];
+    NSString *pass = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", [foo objectAtIndex:27], [foo objectAtIndex:12], [foo objectAtIndex:1], [foo objectAtIndex:27], [foo objectAtIndex:4], [foo objectAtIndex:18], [foo objectAtIndex:1], [foo objectAtIndex:23], [foo objectAtIndex:31]];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    self.passwordField.text = pass;
     [[SPSession sharedSession] setDelegate:self];
-
+    
 }
 
 - (void)viewDidUnload

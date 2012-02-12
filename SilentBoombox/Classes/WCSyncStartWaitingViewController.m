@@ -1,16 +1,21 @@
 //
-//  WCRoleChooserViewController.m
+//  WCSyncStartWaitingViewController.m
 //  SilentBoombox
 //
-//  Created by Daniel DeCovnick on 2/11/12.
+//  Created by Daniel DeCovnick on 2/12/12.
 //  Copyright (c) 2012 Softyards Software. All rights reserved.
 //
 
-#import "WCRoleChooserViewController.h"
-#import "WCAddListenersViewController.h"
+#import "WCSyncStartWaitingViewController.h"
 
-@implementation WCRoleChooserViewController
-
+@implementation WCSyncStartWaitingViewController
+@synthesize listeners;
+- (id)initWithListeners:(NSArray *)_listeners
+{
+    self = [self initWithNibName:@"WCSyncStartWaitingViewController" bundle:nil];
+    self.listeners = _listeners;
+    return self;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,11 +54,4 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)pickedDJ:(id)sender {
-    WCAddListenersViewController *addListenersViewController = [[WCAddListenersViewController alloc] initWithNibName:@"WCAddListenersViewController" bundle:nil];
-    [self.navigationController pushViewController:addListenersViewController animated:YES];
-}
-
-- (IBAction)pickedListener:(id)sender {
-}
 @end

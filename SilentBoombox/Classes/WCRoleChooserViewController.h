@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WCRoleChooserViewController : UIViewController
+- (IBAction)pickedDJ:(id)sender;
+- (IBAction)pickedListener:(id)sender;
 
 @end
