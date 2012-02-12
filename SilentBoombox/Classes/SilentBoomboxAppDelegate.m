@@ -7,7 +7,7 @@
 //
 
 #import "SilentBoomboxAppDelegate.h"
-#import "RootViewController.h"
+#import "SPLoginViewController.h"
 
 
 @implementation SilentBoomboxAppDelegate
