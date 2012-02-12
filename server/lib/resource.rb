@@ -119,10 +119,10 @@ class MHDApp
     end
 
     if all_ready
-      boombox = Boombox.first(:boombox_id => params[:boombox_id])
+      boombox = Boombox.first(:id => params[:boombox_id])
 
       unless boombox.sync_time
-        boombox.sync_time = params[:boombox_id] + (5 * 1000)
+        boombox.sync_time = params[:current_time].to_i + (5 * 1000)
         boombox.save
       end
       boombox.to_json
