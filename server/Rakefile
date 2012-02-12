@@ -8,3 +8,4 @@ CLEAN.include '*.log'
 namespace :test do
   RSpec::Core::RakeTask.new(:all)
 end
+

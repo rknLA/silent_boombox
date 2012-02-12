@@ -5,9 +5,9 @@ class MHDApp
       :spotify_id   => params[:spotify_id]
     )
     bb = Boombox.create(
-      :dj_listener_id   =>  @listener.id,
+      :dj_listener_id   =>  listener.id,
     )
-    listener.update(:boombox_id => @bb.id)
+    listener.update(:boombox_id => bb.id)
 
     response = {
       :boombox_id => bb.id,
