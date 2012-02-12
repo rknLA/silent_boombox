@@ -31,6 +31,23 @@ class MHDApp
       status 400
       body 'Listener could not be created'
     end
+    if params.include?('debug') and params[:debug]
+      body listener.to_json
+    end
+  end
+
+
+  post '/song' do     #add a song to the boombox!
+    song = Song.first_or_create(
+      :spotify_song_id  => params[:spotify_song_id],
+      :boombox_id       => params[:boombox_id]
+    )
+
+    status 200
+    body ''
+    if params.include?('debug') and params[:debug]
+      body song.to_json
+    end
   end
 
   get '/resource.html' do
