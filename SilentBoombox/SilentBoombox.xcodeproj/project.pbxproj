@@ -34,6 +34,9 @@
 		BC146B8C14E86A7F0082EB62 /* WCListeningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */; };
 		BC83647114E8863E0019A462 /* SPCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83646E14E8863E0019A462 /* SPCircularBuffer.m */; };
 		BC83647214E8863E0019A462 /* SPPlaybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83647014E8863E0019A462 /* SPPlaybackManager.m */; };
+		BC83647414E8881A0019A462 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC83647314E8881A0019A462 /* AudioToolbox.framework */; };
+		BC83647614E888210019A462 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC83647514E888210019A462 /* CoreAudio.framework */; };
+		BC83647814E888400019A462 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC83647714E888400019A462 /* AVFoundation.framework */; };
 		E116864114E83AD200156D0C /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116863A14E8395A00156D0C /* libRestKitCoreData.a */; };
 		E116864214E83AD200156D0C /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116863214E8395A00156D0C /* libRestKitJSONParserYAJL.a */; };
 		E116864314E83AD200156D0C /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116862A14E8395A00156D0C /* libRestKitNetwork.a */; };
@@ -198,6 +201,9 @@
 		BC83646E14E8863E0019A462 /* SPCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCircularBuffer.m; sourceTree = "<group>"; };
 		BC83646F14E8863E0019A462 /* SPPlaybackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaybackManager.h; sourceTree = "<group>"; };
 		BC83647014E8863E0019A462 /* SPPlaybackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPlaybackManager.m; sourceTree = "<group>"; };
+		BC83647314E8881A0019A462 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BC83647514E888210019A462 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BC83647714E888400019A462 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E116861514E8395900156D0C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		E116864614E83AED00156D0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E116864814E83AFE00156D0C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -211,6 +217,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC83647814E888400019A462 /* AVFoundation.framework in Frameworks */,
+				BC83647614E888210019A462 /* CoreAudio.framework in Frameworks */,
+				BC83647414E8881A0019A462 /* AudioToolbox.framework in Frameworks */,
 				E116864A14E83AFE00156D0C /* MobileCoreServices.framework in Frameworks */,
 				E116864B14E83AFE00156D0C /* SystemConfiguration.framework in Frameworks */,
 				E116864714E83AED00156D0C /* CoreData.framework in Frameworks */,
@@ -269,6 +278,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BC83647714E888400019A462 /* AVFoundation.framework */,
+				BC83647514E888210019A462 /* CoreAudio.framework */,
+				BC83647314E8881A0019A462 /* AudioToolbox.framework */,
 				E116861514E8395900156D0C /* RestKit.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
