@@ -10,6 +10,7 @@
 #import "SilentBoomboxAppDelegate.h"
 #import "SPSearch.h"
 #import "SPTrack.h"
+#import "SPSession.h"
 #import "WCUserRestClient.h"
 #import "WCListeningViewController.h"
 
@@ -96,6 +97,11 @@
 }
 - (void)didSetSong
 {
-    WCListeningViewController *viewController =
+    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    SPSession *session = appDelegate.spotifySession;
+    WCListeningViewController *viewController = [[WCListeningViewController alloc] initWithNibName:@"WCListeningViewController" bundle:nil];
+    viewController.boomboxID = self.boomboxID;
+    viewController.track = [session trackForURL:[NSURL URLWithString:self.songID]];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 @end
