@@ -20,7 +20,7 @@
 -(id)initWithDelegate: (id)_delegate {
     self = [super init];
     if (self != nil) {
-        restClient = [RKClient clientWithBaseURL:@"http://0.0.0.0:8080/"];
+        restClient = [RKClient clientWithBaseURL:@"http://silent.boombox:8080/"];
         self.delegate = _delegate;
     }
     

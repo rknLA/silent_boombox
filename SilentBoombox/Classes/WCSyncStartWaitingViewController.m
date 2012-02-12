@@ -11,6 +11,7 @@
 #import "SilentBoomboxAppDelegate.h"
 #import "SPSession.h"
 #import "SPUser.h"
+#import "WCListeningViewController.h"
 
 @implementation WCSyncStartWaitingViewController
 @synthesize listeners, userLabel, waitingLabel, loadingWheel, client;
@@ -69,6 +70,11 @@
 
 -(void)didFindBoombox:(NSNumber *)boombox_id withSongId:(NSString *)song_id {
     self.waitingLabel.text = @"Buffering...";
+    WCListeningViewController *viewController = [[WCListeningViewController alloc] initWithNibName:@"WCListeningViewController" bundle:nil];
+    viewController.boomboxID = boombox_id;
+    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    viewController.track = [appDelegate.spotifySession trackForURL:[NSURL URLWithString:song_id]];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end
