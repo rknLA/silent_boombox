@@ -1,12 +1,10 @@
 require 'data_mapper'
-
 class Boombox
   include DataMapper::Resource
 
   property :id,               Serial
   property :dj_listener_id,   Integer
   property :sync_time,        DateTime
-  property :created_at,       DateTime
 
   has n, :listeners
 end
