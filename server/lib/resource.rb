@@ -18,8 +18,19 @@ class MHDApp
   end
 
 
-  get "/" do
-    redirect "/resource.html"
+  post '/listener' do   #add a listener to a boombox!
+    listener = Listener.create(
+      :spotify_id     => params[:spotify_id],
+      :boombox_id     => params[:boombox_id]
+    )
+
+    if listener.valid?
+      status 200
+      body ''
+    else
+      status 400
+      body 'Listener could not be created'
+    end
   end
 
   get '/resource.html' do

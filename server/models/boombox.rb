@@ -16,6 +16,8 @@ class Listener
   property :boombox_id,       Integer
   property :buffered,         Boolean,    :default => false
 
+  validates_uniqueness_of :spotify_id, :scope => :boombox_id,
+    :message => "Listener already added to boombox"
 end
 
 class Song
