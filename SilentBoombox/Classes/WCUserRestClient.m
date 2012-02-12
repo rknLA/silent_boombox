@@ -99,13 +99,29 @@
         }
     } else if ([request isPOST]) {
         if ([[request resourcePath] isEqualToString:@"/boombox"]) {
+            //didCreateBoomboxWithID
+            NSDictionary* boombox_result = [response parsedBody:nil];
+
+            [delegate didCreateBoomboxWithId:[boombox_result objectForKey:@"boombox_id"]];
             
         } else if ([[request resourcePath] isEqualToString:@"/listener"]) {
-            
+            if ([response isOK]) {
+                [delegate didAddListener];
+            } else if ([response isClientError]) {
+                [delegate didFailToAddListener];
+            } else {
+                NSLog(@"A bigger problem has occurred.  Consider checking outside to see if it's the apocalypse.");
+            }
         } else if ([[request resourcePath] isEqualToString:@"/song"]) {
-            
+            if (![response isOK]) {
+                NSLog(@"Problem adding song.  Check the server code.");
+            }
         } else if ([[request resourcePath] isEqualToString:@"/buffered"]) {
-            
+            if ([response isOK]) {
+                [delegate didPostBuffered];
+            } else {
+                NSLog(@"I got 99 problems and a /buffered is one.");
+            }
         }
     } //else you've got a problem.
     

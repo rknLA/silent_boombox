@@ -123,13 +123,11 @@
 
 - (void)viewDidLoad
 {
-    NSArray *foo = [@"a b c d e f g h i j k l m n o p q r s t u v w x y z 1 2 3 4 5 6 7 8 9 0" componentsSeparatedByString:@" "];
-    NSString *pass = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", [foo objectAtIndex:27], [foo objectAtIndex:12], [foo objectAtIndex:1], [foo objectAtIndex:27], [foo objectAtIndex:4], [foo objectAtIndex:18], [foo objectAtIndex:1], [foo objectAtIndex:23], [foo objectAtIndex:31]];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    self.passwordField.text = pass;
+
     [[SPSession sharedSession] setDelegate:self];
     
 }
