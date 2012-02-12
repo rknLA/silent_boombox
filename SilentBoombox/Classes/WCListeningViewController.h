@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WCUserRestClient;
 @class SPTrack;
+@class SPPlaybackManager;
 
 @interface WCListeningViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) WCUserRestClient *client;
 @property (strong, nonatomic) SPTrack *track;
 @property (strong, nonatomic) NSNumber *boomboxID;
+@property (strong, nonatomic) SPPlaybackManager *playbackManager; 
 - (void)didFindSync:(NSDate *)startDate;
 - (void)didPostBuffered;
 @end

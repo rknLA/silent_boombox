@@ -32,6 +32,8 @@
 		BC146B8714E863970082EB62 /* WCMusicSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC146B8514E863970082EB62 /* WCMusicSelectViewController.xib */; };
 		BC146B8B14E86A7F0082EB62 /* WCListeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC146B8914E86A7E0082EB62 /* WCListeningViewController.m */; };
 		BC146B8C14E86A7F0082EB62 /* WCListeningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */; };
+		BC83647114E8863E0019A462 /* SPCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83646E14E8863E0019A462 /* SPCircularBuffer.m */; };
+		BC83647214E8863E0019A462 /* SPPlaybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83647014E8863E0019A462 /* SPPlaybackManager.m */; };
 		E116864114E83AD200156D0C /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116863A14E8395A00156D0C /* libRestKitCoreData.a */; };
 		E116864214E83AD200156D0C /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116863214E8395A00156D0C /* libRestKitJSONParserYAJL.a */; };
 		E116864314E83AD200156D0C /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E116862A14E8395A00156D0C /* libRestKitNetwork.a */; };
@@ -192,6 +194,10 @@
 		BC4D6F0B14E7222F001504E6 /* SPUnknownPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUnknownPlaylist.h; sourceTree = "<group>"; };
 		BC4D6F0C14E7222F001504E6 /* SPURLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPURLExtensions.h; sourceTree = "<group>"; };
 		BC4D6F0D14E7222F001504E6 /* SPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUser.h; sourceTree = "<group>"; };
+		BC83646D14E8863E0019A462 /* SPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCircularBuffer.h; sourceTree = "<group>"; };
+		BC83646E14E8863E0019A462 /* SPCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCircularBuffer.m; sourceTree = "<group>"; };
+		BC83646F14E8863E0019A462 /* SPPlaybackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPlaybackManager.h; sourceTree = "<group>"; };
+		BC83647014E8863E0019A462 /* SPPlaybackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPlaybackManager.m; sourceTree = "<group>"; };
 		E116861514E8395900156D0C /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		E116864614E83AED00156D0C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E116864814E83AFE00156D0C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -276,6 +282,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BC83646D14E8863E0019A462 /* SPCircularBuffer.h */,
+				BC83646E14E8863E0019A462 /* SPCircularBuffer.m */,
+				BC83646F14E8863E0019A462 /* SPPlaybackManager.h */,
+				BC83647014E8863E0019A462 /* SPPlaybackManager.m */,
 				BC4D6EF614E7222F001504E6 /* include */,
 				28A0AAE50D9B0CCF005BE974 /* SilentBoombox_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -536,6 +546,8 @@
 				E116864E14E83E5A00156D0C /* WCUserRestClient.m in Sources */,
 				BC146B8614E863970082EB62 /* WCMusicSelectViewController.m in Sources */,
 				BC146B8B14E86A7F0082EB62 /* WCListeningViewController.m in Sources */,
+				BC83647114E8863E0019A462 /* SPCircularBuffer.m in Sources */,
+				BC83647214E8863E0019A462 /* SPPlaybackManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

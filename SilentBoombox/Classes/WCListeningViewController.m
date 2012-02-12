@@ -12,6 +12,7 @@
 #import "SPSession.h"
 #import "SPTrack.h"
 #import "SPUser.h"
+#import "SPPlaybackManager.h"
 
 @implementation WCListeningViewController
 @synthesize titleLabel;
@@ -20,12 +21,12 @@
 @synthesize client;
 @synthesize track;
 @synthesize boomboxID;
+@synthesize playbackManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -47,6 +48,7 @@
     self.client = [[WCUserRestClient alloc] initWithDelegate:self];
     SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     SPSession *session = appDelegate.spotifySession;
+    self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:session];
     if ([session preloadTrackForPlayback:self.track error:nil])
     {
         [self.client RESTPostBuffered:session.user.canonicalName toBoombox:self.boomboxID];
