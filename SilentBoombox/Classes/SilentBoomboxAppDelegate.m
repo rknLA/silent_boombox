@@ -8,6 +8,9 @@
 
 #import "SilentBoomboxAppDelegate.h"
 #import "SPLoginViewController.h"
+#import "SPLoginViewController.h"
+
+#import "include/appkey.c"
 
 
 @implementation SilentBoomboxAppDelegate
@@ -22,6 +25,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
+    [SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size] 
+											   userAgent:@"com.wecodestuff.SilentBoombox"
+												   error:nil];
     
     // Set the navigation controller as the window's root view controller and display.
     self.window.rootViewController = self.navigationController;
@@ -77,11 +83,6 @@
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
-
-
-- (void)dealloc {
-}
-
 
 @end
 

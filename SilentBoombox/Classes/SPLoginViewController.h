@@ -31,8 +31,9 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "SPSession.h"
 
-@interface SPLoginViewController : UIViewController {
+@interface SPLoginViewController : UIViewController <SPSessionDelegate> {
 	UITextField *usernameField;
 	UITextField *passwordField;
 	UIButton *loginButton;

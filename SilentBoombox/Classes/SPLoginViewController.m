@@ -32,6 +32,7 @@
 
 #import "SPLoginViewController.h"
 #import "CocoaLibSpotify.h"
+#import "WCRoleChooserViewController.h"
 
 @implementation SPLoginViewController
 @synthesize usernameField;
@@ -51,7 +52,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -98,13 +99,18 @@
 	self.spinner.hidden = YES;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)sessionDidLoginSuccessfully:(SPSession *)aSession
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+    //Push RoleChooserViewController
+    WCRoleChooserViewController *roleChooser = [[WCRoleChooserViewController alloc] initWithNibName:@"WCRoleChooserViewController" bundle:nil];
+    [self.navigationController pushViewController:roleChooser animated:YES];
 }
+
+-(void)sessionDidLogOut:(SPSession *)aSession
+{
+    
+}
+
 
 #pragma mark - View lifecycle
 
@@ -113,6 +119,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    [[SPSession sharedSession] setDelegate:self];
+
 }
 
 - (void)viewDidUnload
