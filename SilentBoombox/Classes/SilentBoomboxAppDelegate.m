@@ -12,17 +12,21 @@
 #import "include/appkey.c"
 
 
+
 @implementation SilentBoomboxAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
 @synthesize spotifySession;
+@synthesize restClient;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    
+    restClient = [RKClient clientWithBaseURL:@"http://0.0.0.0:8080/"];
     
     // Override point for customization after application launch.
     [SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size] 

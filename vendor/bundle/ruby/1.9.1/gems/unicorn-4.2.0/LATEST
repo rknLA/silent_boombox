@@ -1,0 +1,27 @@
+=== unicorn 4.2.0 / 2012-01-28 09:18 UTC
+
+  The GPLv3 is now an option to the Unicorn license.  The existing GPLv2
+  and Ruby-only terms will always remain options, but the GPLv3 is
+  preferred.
+
+  Daemonization is correctly detected on all terminals for development
+  use (Brian P O'Rourke).
+
+  Unicorn::OobGC respects applications that disable GC entirely
+  during application dispatch (Yuichi Tateno).
+
+  Many test fixes for OpenBSD, which may help other *BSDs, too.
+  (Jeremy Evans).
+
+  There is now _optional_ SSL support (via the "kgio-monkey"
+  RubyGem).  On fast, secure LANs, SSL is only intended for
+  detecting data corruption that weak TCP checksums cannot detect.
+  Our SSL support is remains unaudited by security experts.
+
+  There are also some minor bugfixes and documentation
+  improvements.
+
+  Ruby 2.0.0dev also has a copy-on-write friendly GC which can save memory
+  when combined with "preload_app true", so if you're in the mood, start
+  testing Unicorn with the latest Ruby!
+

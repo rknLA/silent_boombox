@@ -50,6 +50,10 @@
 }
 
 - (IBAction)pickedDJ:(id)sender {
+    //request POST /boombox
+    
+    
+    
     WCAddListenersViewController *addListenersViewController = [[WCAddListenersViewController alloc] initWithNibName:@"WCAddListenersViewController" bundle:nil];
     [self.navigationController pushViewController:addListenersViewController animated:YES];
 }

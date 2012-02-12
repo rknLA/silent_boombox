@@ -1,0 +1,6 @@
+=== kgio 2.7.2 - for older, and older Rubies / 2012-01-08 03:42 UTC
+
+  Fix a missing #include for Ruby 1.8.5 users.  No need to
+  upgrade to this (nor 2.7.1) if you're on a modern version
+  of Ruby.
+
