@@ -11,8 +11,11 @@
 #import "SPUser.h"
 #import "SilentBoomboxAppDelegate.h"
 #import "WCSyncStartWaitingViewController.h"
+#import "WCUserRestClient.h"
 
 @implementation WCAddListenersViewController
+@synthesize client;
+@synthesize boomboxID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +39,7 @@
 {
     [super viewDidLoad];
     listeners = [[NSMutableArray alloc] init];
+    client = [[WCUserRestClient alloc] initWithDelegate:self];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -159,8 +163,7 @@
 }
 
 - (IBAction)doneTouched:(id)sender {
-    WCSyncStartWaitingViewController *viewController = [[WCSyncStartWaitingViewController alloc] initWithListeners:listeners];
-    [self.navigationController pushViewController:viewController animated:YES];
+    
 }
 
 - (IBAction)addListener:(id)sender {
@@ -170,6 +173,17 @@
     SPUser *user = [SPUser userWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"spotify:user:%@", listener.spotifyID]] inSession:[(SilentBoomboxAppDelegate *)[[UIApplication sharedApplication] delegate] spotifySession]];
     listener.displayName = user.displayName;
     [listeners addObject:listener];
+    [client RESTPostListener:listener.spotifyID toBoombox:self.boomboxID];
+}
+
+- (void)didAddListener
+{
     [mTableView reloadData];
 }
+- (void)didFailToAddListener
+{
+    [listeners removeLastObject];
+    [mTableView reloadData];
+}
+
 @end
