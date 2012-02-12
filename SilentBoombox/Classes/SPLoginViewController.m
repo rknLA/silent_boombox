@@ -122,12 +122,10 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
-{
-    
+{    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-
     [[SPSession sharedSession] setDelegate:self];
     
 }

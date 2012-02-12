@@ -7,6 +7,10 @@
 //
 
 #import "WCUserRestClient.h"
+#import "WCListeningViewController.h"
+#import "WCMusicSelectViewController.h"
+#import "WCAddListenersViewController.h"
+#import "WCSyncStartWaitingViewController.h"
 
 @implementation WCUserRestClient
 
@@ -65,7 +69,7 @@
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
                    
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:boomboxID, @"boombox_id",
-                            now, @"current_time", nil];
+                            [NSNumber numberWithDouble:now], @"current_time", nil];
     [[RKClient sharedClient] get:@"/sync"
                      queryParams:params
                         delegate:self];
@@ -97,8 +101,9 @@
                 
                 
             NSDictionary* sync_result = [response parsedBody:nil];
-            
-            [delegate didFindSync:[sync_result objectForKey:@"sync_time"];
+
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[sync_result objectForKey:@"sync_time"] doubleValue]];
+            [delegate didFindSync:date];
         }
     } else if ([request isPOST]) {
         if ([[request resourcePath] isEqualToString:@"/boombox"]) {
@@ -119,6 +124,7 @@
             if (![response isOK]) {
                 NSLog(@"Problem adding song.  Check the server code.");
             }
+            [delegate didSetSong];
         } else if ([[request resourcePath] isEqualToString:@"/buffered"]) {
             if ([response isOK]) {
                 [delegate didPostBuffered];

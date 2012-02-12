@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class WCUserRestClient;
+
 @interface WCAddListenersViewController : UIViewController
 {
     NSMutableArray *listeners;
@@ -16,4 +18,6 @@
 }
 - (IBAction)doneTouched:(id)sender;
 - (IBAction)addListener:(id)sender;
+@property (nonatomic, strong, readwrite) WCUserRestClient *client;
+@property (nonatomic, strong, readwrite) NSNumber *boomboxID;
 @end
