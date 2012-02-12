@@ -57,9 +57,13 @@
                          delegate:self];
 }
 -(void)RESTGetSync:(NSNumber *)boomboxID {
+    //do time stuff here
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+                   
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:boomboxID, @"boombox_id",
+                            now, @"current_time", nil];
     [[RKClient sharedClient] get:@"/sync"
-                     queryParams:[NSDictionary dictionaryWithObject:boomboxID
-                                                             forKey:@"boombox_id"]
+                     queryParams:params
                         delegate:self];
 }
 
@@ -72,9 +76,26 @@
     if ([request isGET]) {
         if ([[request resourcePath] isEqualToString:@"/boombox"]) {
             NSDictionary* boombox_result = [response parsedBody:nil];
-            NSLog(@"We should have a dictionary here: \n%@", boombox_result);
-        } else if ([[request resourcePath] isEqualToString:@"/sync"]) {
+            for (NSString *key in boombox_result)
+            {
+                if ([[boombox_result objectForKey:key] isEqualToString:@"<null>"])
+                {
+                    [self performSelector:@selector(RESTGetBoombox:) withObject:[(NSDictionary *)[request params] objectForKey:@"spotify_id"] afterDelay:2.0f];
+                    return;
+                }
+            }
+            [delegate didFindBoombox:[boombox_result objectForKey:@"boombox_id"] withSongId:[boombox_result objectForKey:@"spotify_song_id"]];
             
+        } else if ([[request resourcePath] isEqualToString:@"/sync"]) {
+            if ([[response bodyAsString] isEqualToString:@""]) {
+                [self performSelector:@selector(RESTGetSync:) withObject:[(NSDictionary *)[request params] objectForKey:@"boombox_id"] afterDelay:1.0f];
+                return;
+            }
+                
+                
+            NSDictionary* sync_result = [response parsedBody:nil];
+            
+            [delegate didFindSync:[sync_result objectForKey:@"sync_time"];
         }
     } else if ([request isPOST]) {
         if ([[request resourcePath] isEqualToString:@"/boombox"]) {
