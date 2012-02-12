@@ -1,9 +1,0 @@
-=== raindrops 0.8.0 - watcher updates / 2011-10-14 22:00 UTC
-
-  There are various updates to the Raindrops::Watcher Rack app.
-  Most notably, the timestamp where the a statistic first and last
-  hit its peak value (active/queued connections) is captured.
-
-  As usual, the latest Raindrops::Watcher is running at:
-    http://raindrops-demo.bogomips.org/
-
