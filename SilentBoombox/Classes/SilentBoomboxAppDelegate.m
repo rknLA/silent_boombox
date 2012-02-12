@@ -8,6 +8,7 @@
 
 #import "SilentBoomboxAppDelegate.h"
 #import "SPLoginViewController.h"
+#import "WCUserRestClient.h"
 
 #import "include/appkey.c"
 
@@ -25,8 +26,6 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    restClient = [RKClient clientWithBaseURL:@"http://0.0.0.0:8080/"];
     
     // Override point for customization after application launch.
     [SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size] 

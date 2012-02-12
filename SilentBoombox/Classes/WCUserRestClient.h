@@ -18,4 +18,9 @@
 -(void)RESTPostBuffered:(NSString *)spotifyUserID toBoombox:(NSNumber *)boomboxID;
 -(void)RESTGetSync:(NSNumber *)boomboxID;
 
+-(id)initWithDelegate: (id)_delegate;
+
+@property (strong, readonly) RKClient *restClient;
+@property (nonatomic, weak, readwrite) id delegate;
+
 @end

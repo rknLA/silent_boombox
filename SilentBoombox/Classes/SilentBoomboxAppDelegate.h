@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RestKit/RestKit.h>
 
 @class SPSession;
+@class WCUserRestClient;
 
 @interface SilentBoomboxAppDelegate : NSObject <UIApplicationDelegate> {
     
@@ -20,6 +20,6 @@
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, strong) SPSession *spotifySession;
-@property (nonatomic, strong) RKClient *restClient;
+@property (nonatomic, strong) WCUserRestClient *restClient;
 @end
 

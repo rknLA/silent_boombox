@@ -10,6 +10,18 @@
 
 @implementation WCUserRestClient
 
+@synthesize restClient, delegate;
+
+-(id)initWithDelegate: (id)_delegate {
+    self = [super init];
+    if (self != nil) {
+        restClient = [RKClient clientWithBaseURL:@"http://0.0.0.0:8080/"];
+        self.delegate = _delegate;
+    }
+    
+    return self;
+}
+
 - (void)sendRequests {  
     // Perform a simple HTTP GET and call me back with the results  
     [[RKClient sharedClient] get:@"/foo.xml" delegate:self];  
