@@ -23,4 +23,7 @@
 @property (strong, readonly) RKClient *restClient;
 @property (nonatomic, weak, readwrite) id delegate;
 
+@property (nonatomic, weak, readwrite) NSString* lastGetBoomboxQueryString;
+@property (nonatomic, weak, readwrite) NSNumber* lastSyncQueryNumber;
+
 @end

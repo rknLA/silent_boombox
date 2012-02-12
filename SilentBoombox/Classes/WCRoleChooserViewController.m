@@ -8,6 +8,7 @@
 
 #import "WCRoleChooserViewController.h"
 #import "WCAddListenersViewController.h"
+#import "WCSyncStartWaitingViewController.h"
 #import "WCUserRestClient.h"
 #import "SilentBoomboxAppDelegate.h"
 #import "SPSession.h"
@@ -67,5 +68,9 @@
     SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     [client RESTGetBoombox:appDelegate.spotifySession.user.canonicalName];
+    
+    WCSyncStartWaitingViewController *waitingScreen = [[WCSyncStartWaitingViewController alloc] initWithNibName:@"WCSyncStartWaitingViewController" bundle:nil];
+    [self.navigationController pushViewController:waitingScreen animated:YES];
+    
 }
 @end

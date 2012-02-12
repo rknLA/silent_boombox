@@ -14,7 +14,7 @@
 
 @implementation WCUserRestClient
 
-@synthesize restClient, delegate;
+@synthesize restClient, delegate, lastGetBoomboxQueryString, lastSyncQueryNumber;
 
 -(id)initWithDelegate: (id)_delegate {
     self = [super init];
@@ -48,6 +48,8 @@
                          delegate:self];
 }
 -(void)RESTGetBoombox:(NSString *)spotifyUserID {
+    lastGetBoomboxQueryString = spotifyUserID;
+    
     [[RKClient sharedClient] get:@"/boombox"
                      queryParams:[NSDictionary dictionaryWithObject:spotifyUserID
                                                               forKey:@"spotify_id"]
@@ -61,6 +63,8 @@
                          delegate:self];
 }
 -(void)RESTGetSync:(NSNumber *)boomboxID {
+    lastSyncQueryNumber = boomboxID;
+    
     //do time stuff here
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
                    
@@ -80,19 +84,18 @@
     if ([request isGET]) {
         if ([[request resourcePath] isEqualToString:@"/boombox"]) {
             NSDictionary* boombox_result = [response parsedBody:nil];
-            for (NSString *key in boombox_result)
+            
+            if ([[boombox_result allValues] containsObject:[NSNull null]])
             {
-                if ([[boombox_result objectForKey:key] isEqualToString:@"<null>"])
-                {
-                    [self performSelector:@selector(RESTGetBoombox:) withObject:[(NSDictionary *)[request params] objectForKey:@"spotify_id"] afterDelay:2.0f];
-                    return;
-                }
+                [self performSelector:@selector(RESTGetBoombox:) withObject:lastGetBoomboxQueryString afterDelay:2.0f];
+                return;
             }
-            [delegate didFindBoombox:[boombox_result objectForKey:@"boombox_id"] withSongId:[boombox_result objectForKey:@"spotify_song_id"]];
+            
+//            [delegate didFindBoombox:[boombox_result objectForKey:@"boombox_id"] withSongId:[boombox_result objectForKey:@"spotify_song_id"]];
             
         } else if ([[request resourcePath] isEqualToString:@"/sync"]) {
             if ([[response bodyAsString] isEqualToString:@""]) {
-                [self performSelector:@selector(RESTGetSync:) withObject:[(NSDictionary *)[request params] objectForKey:@"boombox_id"] afterDelay:1.0f];
+                [self performSelector:@selector(RESTGetSync:) withObject:lastSyncQueryNumber afterDelay:1.0f];
                 return;
             }
                 
@@ -106,13 +109,13 @@
             //didCreateBoomboxWithID
             NSDictionary* boombox_result = [response parsedBody:nil];
 
-            [delegate didCreateBoomboxWithId:[boombox_result objectForKey:@"boombox_id"]];
+//            [delegate didCreateBoomboxWithId:[boombox_result objectForKey:@"boombox_id"]];
             
         } else if ([[request resourcePath] isEqualToString:@"/listener"]) {
             if ([response isOK]) {
-                [delegate didAddListener];
+//                [delegate didAddListener];
             } else if ([response isClientError]) {
-                [delegate didFailToAddListener];
+//                [delegate didFailToAddListener];
             } else {
                 NSLog(@"A bigger problem has occurred.  Consider checking outside to see if it's the apocalypse.");
             }
@@ -123,7 +126,7 @@
             [delegate didSetSong];
         } else if ([[request resourcePath] isEqualToString:@"/buffered"]) {
             if ([response isOK]) {
-                [delegate didPostBuffered];
+//                [delegate didPostBuffered];
             } else {
                 NSLog(@"I got 99 problems and a /buffered is one.");
             }

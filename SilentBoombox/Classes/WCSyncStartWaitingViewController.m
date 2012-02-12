@@ -7,9 +7,13 @@
 //
 
 #import "WCSyncStartWaitingViewController.h"
+#import "SilentBoomboxAppDelegate.h"
+#import "SPSession.h"
+#import "SPUser.h"
 
 @implementation WCSyncStartWaitingViewController
-@synthesize listeners;
+@synthesize listeners, userLabel, loadingWheel;
+
 - (id)initWithListeners:(NSArray *)_listeners
 {
     self = [self initWithNibName:@"WCSyncStartWaitingViewController" bundle:nil];
@@ -39,6 +43,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    self.userLabel.text = appDelegate.spotifySession.user.canonicalName;
+    [self.loadingWheel startAnimating];
+    
 }
 
 - (void)viewDidUnload

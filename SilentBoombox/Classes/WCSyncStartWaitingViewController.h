@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface WCSyncStartWaitingViewController : UIViewController
+
 - (id)initWithListeners:(NSArray *)listeners;
+
 @property (strong, nonatomic) NSArray *listeners;
+
+@property (nonatomic, weak) IBOutlet UILabel *userLabel;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *loadingWheel;
+
+
 @end
