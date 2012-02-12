@@ -4,7 +4,7 @@ class MHDApp < Sinatra::Application
 
   def ensure_connections
     #DataMapper::Logger.new($stdout, :debug)
-    DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+    DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/musichackday')
   end
 
   before do
