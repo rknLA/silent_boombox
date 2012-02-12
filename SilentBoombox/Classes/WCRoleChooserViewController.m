@@ -39,6 +39,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.client = [[WCUserRestClient alloc] initWithDelegate:self];
+
 }
 
 - (void)viewDidUnload
