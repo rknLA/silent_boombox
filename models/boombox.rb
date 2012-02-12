@@ -28,7 +28,7 @@ class Song
   property :boombox_id,       Integer,    :required => true
 end
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/musichackday')
+DataMapper.setup(:default, ENV['SHARED_DATABASE_URL'] || 'postgres://localhost/musichackday')
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
