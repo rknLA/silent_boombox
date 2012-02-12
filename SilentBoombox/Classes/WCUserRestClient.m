@@ -11,6 +11,7 @@
 #import "WCMusicSelectViewController.h"
 #import "WCAddListenersViewController.h"
 #import "WCSyncStartWaitingViewController.h"
+#import "WCRoleChooserViewController.h"
 
 @implementation WCUserRestClient
 

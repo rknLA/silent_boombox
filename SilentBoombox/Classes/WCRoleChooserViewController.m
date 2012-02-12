@@ -56,10 +56,13 @@
 
 - (IBAction)pickedDJ:(id)sender {
     //request POST /boombox
-    
-    
-    
+    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [client RESTPostBoombox:appDelegate.spotifySession.user.canonicalName];
+}
+- (void)didCreateBoomboxWithId:(NSNumber *)boomboxID
+{
     WCAddListenersViewController *addListenersViewController = [[WCAddListenersViewController alloc] initWithNibName:@"WCAddListenersViewController" bundle:nil];
+    addListenersViewController.boomboxID = boomboxID;
     [self.navigationController pushViewController:addListenersViewController animated:YES];
 }
 
