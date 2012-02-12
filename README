@@ -1,7 +1,36 @@
-Silent Boombox project
-SF Music Hack Day 2012
+Silent Boombox Sync Server API
+==============================
+
+This is a basic REST API that manages synchronization for the Silent Boombox app.
+
+The control flow looks something like this:
+
+* User A starts app and logs into Spotify
+* User A clicks the 'DJ' button
+    * App sends a POST /boombox message to the server to create a new boombox resource.
+* User A is prompted to add listeners to the boombox.
+
+* User B starts app and logs into Spotify
+* User B clicks the 'Listen' button
+    * App polls GET /boombox to obtain a boombox id (and spotify song id)
+    * When a boombox id is returned, the display is updated to indicate that the User's been added to the boombox.
+    * When the song ID is returned, go to Buffering and Syncing 
+
+* User A adds a listener (User B) based on a Spotify User's login, username, or email (TODO - right now just spotify User name)
+    * App sends a POST /listener message to the server with the listener's spotify id and the boombox id from the previous request
+* Repeat above step as needed
+* User A clicks "Done adding listeners"
+
+* App pings Spotify for a song selection kind of thing.  Or searches for a song, or something.
+* User A selects a song
+    * App sends POST /song to the server with the boombox id.  The server then includes this when listeners ping GET /boombox
+    * App also begins the Buffering and Sycing process
 
 
+Buffering and Syncing:
+* App uses returned song ID to begin buffering a song from Spotify
+* When enough of a buffer is established, the app calls POST /buffered to the server to indicate it's ready for syncing
+* App polls GET /sync until a UTC start time is returned
 
-Listen to music with friends, through your own headphones.
+* Each listener (including the DJ) should receive the same UTC, and will start playing the buffer at that time.
 
