@@ -7,3 +7,6 @@ gem 'mysql'
 gem 'json'
 gem 'rspec'
 gem 'rack-test'
+
+gem 'data_mapper'
+gem 'dm-mysql-adapter'

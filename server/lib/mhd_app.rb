@@ -3,7 +3,9 @@ require 'json'
 class MHDApp < Sinatra::Application
 
   def ensure_connections
-    # connect to DB here
+    DataMapper::Logger.new($stdout, :debug)
+    DataMapper.setup(:default, 'mysql://localhost/silent_boombox')
+    DataMapper.finalize
   end
 
   before do
