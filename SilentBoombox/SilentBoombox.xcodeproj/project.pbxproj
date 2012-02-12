@@ -165,10 +165,10 @@
 		BC146B2D14E7AF750082EB62 /* WCSyncStartWaitingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WCSyncStartWaitingViewController.xib; path = Classes/WCSyncStartWaitingViewController.xib; sourceTree = "<group>"; };
 		BC146B8314E863970082EB62 /* WCMusicSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMusicSelectViewController.h; sourceTree = "<group>"; };
 		BC146B8414E863970082EB62 /* WCMusicSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMusicSelectViewController.m; sourceTree = "<group>"; };
-		BC146B8514E863970082EB62 /* WCMusicSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCMusicSelectViewController.xib; sourceTree = "<group>"; };
+		BC146B8514E863970082EB62 /* WCMusicSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WCMusicSelectViewController.xib; path = Classes/WCMusicSelectViewController.xib; sourceTree = "<group>"; };
 		BC146B8814E86A7E0082EB62 /* WCListeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCListeningViewController.h; sourceTree = "<group>"; };
 		BC146B8914E86A7E0082EB62 /* WCListeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCListeningViewController.m; sourceTree = "<group>"; };
-		BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCListeningViewController.xib; sourceTree = "<group>"; };
+		BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WCListeningViewController.xib; path = Classes/WCListeningViewController.xib; sourceTree = "<group>"; };
 		BC4D6EF714E7222F001504E6 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
 		BC4D6EF814E7222F001504E6 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
 		BC4D6EF914E7222F001504E6 /* CocoaLibSpotifyPlatformImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotifyPlatformImports.h; sourceTree = "<group>"; };
@@ -246,10 +246,8 @@
 				E116864D14E83E5A00156D0C /* WCUserRestClient.m */,
 				BC146B8314E863970082EB62 /* WCMusicSelectViewController.h */,
 				BC146B8414E863970082EB62 /* WCMusicSelectViewController.m */,
-				BC146B8514E863970082EB62 /* WCMusicSelectViewController.xib */,
 				BC146B8814E86A7E0082EB62 /* WCListeningViewController.h */,
 				BC146B8914E86A7E0082EB62 /* WCListeningViewController.m */,
-				BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -290,6 +288,8 @@
 			children = (
 				BC146B2D14E7AF750082EB62 /* WCSyncStartWaitingViewController.xib */,
 				BC146B1D14E7602B0082EB62 /* WCRoleChooserViewController.xib */,
+				BC146B8514E863970082EB62 /* WCMusicSelectViewController.xib */,
+				BC146B8A14E86A7F0082EB62 /* WCListeningViewController.xib */,
 				BC146B2214E771440082EB62 /* WCAddListenersViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				BC146AEF14E745C90082EB62 /* SPLoginViewController_iPhone.xib */,

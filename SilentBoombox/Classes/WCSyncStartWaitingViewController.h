@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WCUserRestClient;
 
 @interface WCSyncStartWaitingViewController : UIViewController
 
@@ -15,7 +16,9 @@
 @property (strong, nonatomic) NSArray *listeners;
 
 @property (nonatomic, weak) IBOutlet UILabel *userLabel;
+@property (nonatomic, weak) IBOutlet UILabel *waitingLabel;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *loadingWheel;
-
+@property (strong, readwrite) WCUserRestClient *client;
+-(void)didFindBoombox:(NSNumber *)boombox_id withSongId:(NSString *)song_id;
 
 @end

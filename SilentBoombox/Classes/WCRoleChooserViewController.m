@@ -67,10 +67,6 @@
 }
 
 - (IBAction)pickedListener:(id)sender {
-    self.client = [[WCUserRestClient alloc] initWithDelegate:self];
-    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    
-    [client RESTGetBoombox:appDelegate.spotifySession.user.canonicalName];
     
     WCSyncStartWaitingViewController *waitingScreen = [[WCSyncStartWaitingViewController alloc] initWithNibName:@"WCSyncStartWaitingViewController" bundle:nil];
     [self.navigationController pushViewController:waitingScreen animated:YES];
