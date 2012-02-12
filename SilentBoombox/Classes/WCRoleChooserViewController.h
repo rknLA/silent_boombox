@@ -13,4 +13,5 @@
 - (IBAction)pickedDJ:(id)sender;
 - (IBAction)pickedListener:(id)sender;
 @property (strong, readwrite) WCUserRestClient *client;
+- (void)didCreateBoomboxWithId:(NSNumber *)boomboxID;
 @end
