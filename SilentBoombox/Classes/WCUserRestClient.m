@@ -22,18 +22,6 @@
     return self;
 }
 
-- (void)sendRequests {  
-    // Perform a simple HTTP GET and call me back with the results  
-    [[RKClient sharedClient] get:@"/foo.xml" delegate:self];  
-    
-    // Send a POST to a remote resource. The dictionary will be transparently  
-    // converted into a URL encoded representation and sent along as the request body  
-    NSDictionary* params = [NSDictionary dictionaryWithObject:@"RestKit" forKey:@"Sender"];  
-    [[RKClient sharedClient] post:@"/other.json" params:params delegate:self];  
-    
-    // DELETE a remote resource from the server  
-    [[RKClient sharedClient] delete:@"/missing_resource.txt" delegate:self];  
-}  
 
 -(void)RESTPostBoombox:(NSString *)spotifyUserID {
     [[RKClient sharedClient] post:@"/boombox"
@@ -76,31 +64,30 @@
 }
 
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {
+    if (![response isJSON]) {
+        NSLog(@"well that's a weird response... \n%@", [response contentType]);
+        return;
+    }
     
+    if ([request isGET]) {
+        if ([[request resourcePath] isEqualToString:@"/boombox"]) {
+            NSDictionary* boombox_result = [response parsedBody:nil];
+            NSLog(@"We should have a dictionary here: \n%@", boombox_result);
+        } else if ([[request resourcePath] isEqualToString:@"/sync"]) {
+            
+        }
+    } else if ([request isPOST]) {
+        if ([[request resourcePath] isEqualToString:@"/boombox"]) {
+            
+        } else if ([[request resourcePath] isEqualToString:@"/listener"]) {
+            
+        } else if ([[request resourcePath] isEqualToString:@"/song"]) {
+            
+        } else if ([[request resourcePath] isEqualToString:@"/buffered"]) {
+            
+        }
+    } //else you've got a problem.
     
-    
-    if ([request isGET]) {  
-        // Handling GET /foo.xml  
-        
-        if ([response isOK]) {  
-            // Success! Let's take a look at the data  
-            NSLog(@"Retrieved XML: %@", [response bodyAsString]);  
-        }  
-        
-    } else if ([request isPOST]) {  
-        
-        // Handling POST /other.json  
-        if ([response isJSON]) {  
-            NSLog(@"Got a JSON response back from our POST!");  
-        }  
-        
-    } else if ([request isDELETE]) {  
-        
-        // Handling DELETE /missing_resource.txt  
-        if ([response isNotFound]) {  
-            NSLog(@"The resource path '%@' was not found.", [request resourcePath]);  
-        }  
-    }  
 }  
 
 @end

@@ -8,9 +8,13 @@
 
 #import "WCRoleChooserViewController.h"
 #import "WCAddListenersViewController.h"
+#import "WCUserRestClient.h"
+#import "SilentBoomboxAppDelegate.h"
+#import "SPSession.h"
+#import "SPUser.h"
 
 @implementation WCRoleChooserViewController
-
+@synthesize client;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -59,5 +63,9 @@
 }
 
 - (IBAction)pickedListener:(id)sender {
+    self.client = [[WCUserRestClient alloc] initWithDelegate:self];
+    SilentBoomboxAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    [client RESTGetBoombox:appDelegate.spotifySession.user.canonicalName];
 }
 @end

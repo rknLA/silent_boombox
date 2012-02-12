@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WCUserRestClient;
 
 @interface WCRoleChooserViewController : UIViewController
 - (IBAction)pickedDJ:(id)sender;
 - (IBAction)pickedListener:(id)sender;
-
+@property (strong, readwrite) WCUserRestClient *client;
 @end
