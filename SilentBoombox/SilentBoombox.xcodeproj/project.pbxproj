@@ -21,6 +21,8 @@
 		BC146AF714E747A90082EB62 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC146AF614E747A90082EB62 /* CFNetwork.framework */; };
 		BC146B1414E74BA80082EB62 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC146B1314E74BA80082EB62 /* libstdc++.dylib */; };
 		BC146B1614E74C750082EB62 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC146B1514E74C750082EB62 /* libCocoaLibSpotify.a */; };
+		BC146B1E14E7602B0082EB62 /* WCRoleChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC146B1C14E7602B0082EB62 /* WCRoleChooserViewController.m */; };
+		BC146B1F14E7602B0082EB62 /* WCRoleChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC146B1D14E7602B0082EB62 /* WCRoleChooserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		BC146AF614E747A90082EB62 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BC146B1314E74BA80082EB62 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		BC146B1514E74C750082EB62 /* libCocoaLibSpotify.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaLibSpotify.a; sourceTree = "<group>"; };
+		BC146B1A14E7599C0082EB62 /* appkey.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = appkey.c; sourceTree = "<group>"; };
+		BC146B1B14E7602B0082EB62 /* WCRoleChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCRoleChooserViewController.h; sourceTree = "<group>"; };
+		BC146B1C14E7602B0082EB62 /* WCRoleChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCRoleChooserViewController.m; sourceTree = "<group>"; };
+		BC146B1D14E7602B0082EB62 /* WCRoleChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WCRoleChooserViewController.xib; path = Classes/WCRoleChooserViewController.xib; sourceTree = "<group>"; };
 		BC4D6EF714E7222F001504E6 /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
 		BC4D6EF814E7222F001504E6 /* CocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotify.h; sourceTree = "<group>"; };
 		BC4D6EF914E7222F001504E6 /* CocoaLibSpotifyPlatformImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLibSpotifyPlatformImports.h; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 				BC146AF414E745E20082EB62 /* SPLoginViewController.m */,
 				1D3623240D0F684500981E51 /* SilentBoomboxAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SilentBoomboxAppDelegate.m */,
+				BC146B1B14E7602B0082EB62 /* WCRoleChooserViewController.h */,
+				BC146B1C14E7602B0082EB62 /* WCRoleChooserViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC146B1D14E7602B0082EB62 /* WCRoleChooserViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				BC146AEF14E745C90082EB62 /* SPLoginViewController_iPhone.xib */,
 				BC146AF114E745D30082EB62 /* SPLoginViewController_iPad.xib */,
@@ -158,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4D6EF714E7222F001504E6 /* api.h */,
+				BC146B1A14E7599C0082EB62 /* appkey.c */,
 				BC4D6EF814E7222F001504E6 /* CocoaLibSpotify.h */,
 				BC4D6EF914E7222F001504E6 /* CocoaLibSpotifyPlatformImports.h */,
 				BC4D6EFA14E7222F001504E6 /* SPAlbum.h */,
@@ -241,6 +251,7 @@
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				BC146AF014E745C90082EB62 /* SPLoginViewController_iPhone.xib in Resources */,
 				BC146AF214E745D30082EB62 /* SPLoginViewController_iPad.xib in Resources */,
+				BC146B1F14E7602B0082EB62 /* WCRoleChooserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +266,7 @@
 				1D3623260D0F684500981E51 /* SilentBoomboxAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				BC146AF514E745E20082EB62 /* SPLoginViewController.m in Sources */,
+				BC146B1E14E7602B0082EB62 /* WCRoleChooserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +329,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = .;
 			};
 			name = Debug;
 		};
@@ -330,6 +343,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = .;
 			};
 			name = Release;
 		};
